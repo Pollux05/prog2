@@ -54,7 +54,7 @@ def main():
 	plt.xlabel("n")
 	plt.legend()
 	plt.ylabel("time in seconds")
-	plt.savefig("Fib_20-30_time_plot.png", dpi=300)
+	plt.savefig("Fib_20-30_time_plot_final.png", dpi=300)
 """
 # Plot for 30-45
 	n_py = []
