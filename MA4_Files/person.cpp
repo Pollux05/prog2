@@ -6,9 +6,10 @@ class Person{
 		Person(int);
 		int get();
 		void set(int);
-		int fib(int);
+		int fib();
 	private:
 		int age;
+		int _fib(int);
 	};
  
 Person::Person(int n){
@@ -23,17 +24,21 @@ void Person::set(int n){
 	age = n;
 	}
 
-int Person::fib(int n){
-	if (n<=1){
-		return (1);
+int Person::_fib(int n){
+	if (n==1 || n==2){
+		return 1;
 	}else{
-		return (fib(n-1)+fib(n-2));
+		return _fib(n-1)+_fib(n-2);
 	}}
+
+int Person::fib(){
+	return _fib(age);
+}
 
 extern "C"{
 	Person* Person_new(int n) {return new Person(n);}
 	int Person_get(Person* person) {return person->get();}
-	int Person_fib(Person* person, int n) {return person->fib(n);}
+	int Person_fib(Person* person) {return person->fib();}
 	void Person_set(Person* person, int n) {person->set(n);}
 	void Person_delete(Person* person){
 		if (person){
