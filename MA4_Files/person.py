@@ -9,7 +9,7 @@ class Person(object):
 		lib.Person_new.restype = ctypes.c_void_p
 		lib.Person_get.argtypes = [ctypes.c_void_p]
 		lib.Person_get.restype = ctypes.c_int
-		lib.Person_fib.argtype = [ctypes.c_void_p]
+		lib.Person_fib.argtypes = [ctypes.c_void_p]
 		lib.Person_fib.restype = ctypes.c_int
 		lib.Person_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
 		lib.Person_delete.argtypes = [ctypes.c_void_p]
@@ -27,15 +27,15 @@ class Person(object):
 	def __del__(self):
 		return lib.Person_delete(self.obj)
 
-	def fib_py(n):
-		if n <= 1:
-			return n
-		else:
-			return(fib_py(n-1) + fib_py(n-2))
+def fib_py(n):
+	if n <= 1:
+		return n
+	else:
+		return(fib_py(n-1) + fib_py(n-2))
 
-	@njit
-	def fib_numba(n):
-		if n <= 1:
-			return n
-		else:
-			return (fib_numba(n-1) + fib_numba(n-2))
+@njit
+def fib_numba(n):
+	if n <= 1:
+		return n
+	else:
+		return (fib_numba(n-1) + fib_numba(n-2))
