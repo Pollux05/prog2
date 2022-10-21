@@ -31,7 +31,7 @@ def main():
 	time_py = []
 	i=1
 	for i in range (11):
-		i+=10
+		i+=20
 		start = pc()
 		fib_py(i)
 		end = pc()
@@ -42,7 +42,7 @@ def main():
 	time_numba = []
 	i=1
 	for i in range (11):
-		i+=10
+		i+=20
 		start = pc()
 		fib_numba(i)
 		end = pc()
@@ -54,8 +54,8 @@ def main():
 	plt.xlabel("n")
 	plt.legend()
 	plt.ylabel("time in seconds")
-	#plt.savefig("Fib_20-30_time_plot.png", dpi=300)
-
+	plt.savefig("Fib_20-30_time_plot.png", dpi=300)
+"""
 # Plot for 30-45
 	n_py = []
 	time_py = []
@@ -99,7 +99,7 @@ def main():
 	plt.legend()
 	plt.ylabel("time in seconds")
 	plt.savefig("Fib_30-45_time_plot.png", dpi=300)
-
+"""
 
 
 
