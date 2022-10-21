@@ -95,7 +95,7 @@ def plot30_45():
 	plt.xlabel("n")
 	plt.legend()
 	plt.ylabel("time in seconds")
-	plt.savefig("Fib_30-45_time_plot_final.png", dpi=300)
+#	plt.savefig("Fib_30-45_time_plot_final.png", dpi=300)
 
 
 def main():
@@ -105,7 +105,10 @@ def main():
 	print(f.get())
 	print(f.fib())
 	#plot20_30()
-	plot30_45()
+	#plot30_45()
+	print(fib_numba(47))
+	f=Person(47)
+	print(f.fib())
 
 if __name__ == '__main__':
 	main()
