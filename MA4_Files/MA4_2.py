@@ -18,14 +18,8 @@ def fib_numba(n):
 	else:
 		return fib_numba(n-1)+fib_numba(n-2)
 
-def main():
-	f = Person(5)
-	print(f.get())
-	f.set(7)
-	print(f.get())
-	f.fib()
-	print(f.fib())
 
+def plot20_30():
 # Plot for 20-30
 	n_py = []
 	time_py = []
@@ -54,8 +48,11 @@ def main():
 	plt.xlabel("n")
 	plt.legend()
 	plt.ylabel("time in seconds")
-	plt.savefig("Fib_20-30_time_plot_final.png", dpi=300)
-"""
+	print("successful")
+#	plt.savefig("Fib_20-30_time_plot_final.png", dpi=300)
+
+
+def plot30_45():
 # Plot for 30-45
 	n_py = []
 	time_py = []
@@ -98,11 +95,17 @@ def main():
 	plt.xlabel("n")
 	plt.legend()
 	plt.ylabel("time in seconds")
-	plt.savefig("Fib_30-45_time_plot.png", dpi=300)
-"""
+	plt.savefig("Fib_30-45_time_plot_final.png", dpi=300)
 
 
-
+def main():
+	f = Person(5)
+	print(f.get())
+	f.set(7)
+	print(f.get())
+	print(f.fib())
+	#plot20_30()
+	plot30_45()
 
 if __name__ == '__main__':
 	main()
